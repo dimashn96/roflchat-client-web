@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve --host 0.0.0.0 --port 8080 --disable-host-check",
-    "serve": "ng serve",
-    "build": "ng build --prod"
+    "client": "ng serve",
+    "build": "ng build"
   },
   "engines": {
     "node": "~9.9.0",
