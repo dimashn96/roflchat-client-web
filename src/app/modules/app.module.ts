@@ -8,6 +8,10 @@ import {HttpService} from '../services/http.service';
 
 import {AppComponent} from '../components/app.component';
 import {ConversationsComponent} from '../components/conversations-component/conversations.component';
+import {UserComponent} from "../components/user-component/user.component";
+import {UserRegistrationComponent} from "../components/user-registration-component/user-registration.component";
+import {UserAuthorizationComponent} from "../components/user-authorization-component/user-authorization.component";
+
 
 const appRoutes: Routes = [
     {path: '', component: ConversationsComponent}
@@ -16,6 +20,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
       AppComponent,
+      UserComponent,
+      UserRegistrationComponent,
+      UserAuthorizationComponent,
       ConversationsComponent
   ],
   imports: [
