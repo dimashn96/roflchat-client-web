@@ -20,7 +20,7 @@ export class UserRegistrationComponent {
   submit() {
     this.httpService.addUser(this.user).subscribe((res: Response) => {
         this.done = true;
-        this.router.navigate(['auth']);
+        this.router.navigate(['user/authorization']);
         if (typeof res.data === 'string') {
           this.message = res.data;
         }

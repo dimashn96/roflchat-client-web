@@ -3,7 +3,6 @@ import {User} from '../../models/UserModel';
 import {Response} from '../../models/ResponseModel';
 import {HttpService} from '../../services/http.service';
 import {Router} from '@angular/router';
-import {AppComponent} from '../app.component';
 
 @Component({
   selector: 'app-user-auth',
@@ -16,7 +15,7 @@ export class UserAuthorizationComponent {
   message: string;
   done = false;
 
-  constructor(private httpService: HttpService, private router: Router, private mainComp: AppComponent) {
+  constructor(private httpService: HttpService, private router: Router) {
   }
 
   submit() {
@@ -25,7 +24,7 @@ export class UserAuthorizationComponent {
           this.done = true;
           if (res.data.token && typeof res.data.token === 'string') {
             window.localStorage.setItem('token', res.data.token);
-            this.router.navigate(['account']);
+            this.router.navigate(['user']);
           }
         }
       },

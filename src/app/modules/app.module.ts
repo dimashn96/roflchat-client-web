@@ -9,18 +9,31 @@ import {HttpService} from '../services/http.service';
 import {AppComponent} from '../components/app.component';
 import {ConversationsComponent} from '../components/conversations-component/conversations.component';
 import {UserComponent} from "../components/user-component/user.component";
+import {UserInfoComponent} from "../components/user-info-component/user-info.component";
 import {UserRegistrationComponent} from "../components/user-registration-component/user-registration.component";
 import {UserAuthorizationComponent} from "../components/user-authorization-component/user-authorization.component";
 
 
 const appRoutes: Routes = [
-    {path: '', component: ConversationsComponent}
+    {path: 'conversations', component: ConversationsComponent},
+    {
+        path: 'user',
+        component: UserComponent,
+        children: [
+            {path: 'info', component: UserInfoComponent},
+            {path: 'registration', component: UserRegistrationComponent},
+            {path: 'authorization', component: UserAuthorizationComponent},
+            {path: '**', redirectTo: 'info'}
+        ]
+    },
+    {path: '**', redirectTo: 'conversations'}
 ];
 
 @NgModule({
   declarations: [
       AppComponent,
       UserComponent,
+      UserInfoComponent,
       UserRegistrationComponent,
       UserAuthorizationComponent,
       ConversationsComponent

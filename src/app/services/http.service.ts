@@ -10,15 +10,15 @@ export class HttpService {
   }
 
   addUser(user: User) {
-    return this.http.put('../api/user', user);
+    return this.http.put('http://localhost:3000/api/user', user);
   }
 
   auth(user: User) {
-    return this.http.post('../api/user', user);
+    return this.http.post('http://localhost:3000/api/user', user);
   }
 
   getUser(token: string) {
-    return this.http.get('../api/user', {headers: {'x-auth': token}});
+    return this.http.get('http://localhost:3000/api/user', {headers: {'x-auth': token}});
   }
 
 }
