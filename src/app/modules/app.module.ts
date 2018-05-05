@@ -12,10 +12,17 @@ import {UserComponent} from "../components/user-component/user.component";
 import {UserInfoComponent} from "../components/user-info-component/user-info.component";
 import {UserRegistrationComponent} from "../components/user-registration-component/user-registration.component";
 import {UserAuthorizationComponent} from "../components/user-authorization-component/user-authorization.component";
+import {ConversationsCreationComponent} from "../components/conversations-creation-component/conversations-creation.component";
 
 
 const appRoutes: Routes = [
-    {path: 'conversations', component: ConversationsComponent},
+    {
+        path: 'conversations',
+        component: ConversationsComponent,
+        children: [
+            {path: 'creation', component: ConversationsCreationComponent},
+            {path: '**', redirectTo: 'creation'}
+        ]},
     {
         path: 'user',
         component: UserComponent,
@@ -36,7 +43,8 @@ const appRoutes: Routes = [
       UserInfoComponent,
       UserRegistrationComponent,
       UserAuthorizationComponent,
-      ConversationsComponent
+      ConversationsComponent,
+      ConversationsCreationComponent
   ],
   imports: [
       BrowserModule,

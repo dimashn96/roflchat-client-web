@@ -1,8 +1,8 @@
 import { ObjectID } from 'mongodb';
 
-export class User {
+export class Conversation {
   id: ObjectID;
   name: string;
-  password: string;
+  userId: ObjectID;
   crDate: Date;
 }
