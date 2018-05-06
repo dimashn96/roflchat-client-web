@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-//    "start": "ng serve --host 0.0.0.0 --port 8080 --disable-host-check",
     "ng": "ng",
     "start": "ng serve",
     "client": "ng serve",
