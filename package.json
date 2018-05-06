@@ -3,9 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve --host 0.0.0.0 --port 8080 --disable-host-check",
+//    "start": "ng serve --host 0.0.0.0 --port 8080 --disable-host-check",
+    "ng": "ng",
+    "start": "ng serve",
     "client": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "postinstall": "ng build --aot --target=production"
   },
   "engines": {
     "node": "~9.9.0",
@@ -13,6 +16,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~1.7.4",
+    "@angular/compiler-cli": "^5.2.0",
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
@@ -25,7 +30,8 @@
     "core-js": "^2.4.1",
     "mongodb": "^3.0.7",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "typescript": "~2.5.3"
   },
   "devDependencies": {
     "@angular/cli": "~1.7.4",
